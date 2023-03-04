@@ -63,7 +63,7 @@ namespace VezbanjeGenerickaLista1.BusinessLayer
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new EnumeratorZaNasuListu<T>(this.items, this.count);
+            return new EnumeratorZaMojuListu<T>(this.items, this.count);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -71,12 +71,12 @@ namespace VezbanjeGenerickaLista1.BusinessLayer
             return this.GetEnumerator();
         }
     }
-    public class EnumeratorZaNasuListu<T> : IEnumerator<T>, IEnumerator
+    public class EnumeratorZaMojuListu<T> : IEnumerator<T>, IEnumerator
     {
         private T[] items;
         private int count;
         private int tekuci = -1;
-        public EnumeratorZaNasuListu(T[] items,int count)
+        public EnumeratorZaMojuListu(T[] items,int count)
         {
             this.items = items;
             this.count = count;
